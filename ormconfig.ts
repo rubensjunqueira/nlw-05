@@ -7,6 +7,7 @@ const options: ConnectionOptions = {
     migrationsDir: "./src/database/migrations",
   },
   migrations: ["./src/database/migrations/*.ts"],
+  entities: ["./src/entities/*.ts"],
 };
 
 export default options;

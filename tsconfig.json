@@ -7,8 +7,17 @@
     "allowJs": true,
     "paths": {
       "@database/*": [
-        "./src/database/"
-      ]
+        "./src/database/*"
+      ],
+      "@entities/*": [
+        "./src/entities/*"
+      ],
+      "@repositories/*": [
+        "./src/repositories/*"
+      ],
+      "@DTOs/*": [
+        "./src/DTOs/*"
+      ],      
     },
     "typeRoots": [
       "./node_modules/@types",
