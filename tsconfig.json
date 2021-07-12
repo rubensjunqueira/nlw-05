@@ -12,6 +12,9 @@
       "@entities/*": [
         "./src/entities/*"
       ],
+      "@errors/*": [
+        "./src/errors/*"
+      ],
       "@repositories/*": [
         "./src/repositories/*"
       ],

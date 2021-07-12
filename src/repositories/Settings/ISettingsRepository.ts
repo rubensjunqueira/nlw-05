@@ -3,4 +3,5 @@ import { Setting } from "@entities/Setting";
 
 export interface ISettingsRepository {
   create({ chat, username }: ICreateSettingsDTO): Promise<Setting>;
+  findByUsername(username: string): Promise<Setting>;
 }

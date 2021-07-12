@@ -23,4 +23,8 @@ export class SettingsRepositoryInMemory implements ISettingsRepository {
 
     return newSetting;
   }
+
+  async findByUsername(username: string): Promise<Setting> {
+    return this.repository.find((x) => x.username === username);
+  }
 }
