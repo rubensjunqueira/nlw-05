@@ -1,4 +1,4 @@
 export interface ICreateSettingsDTO {
-  chat: string;
+  chat: boolean;
   username: string;
 }

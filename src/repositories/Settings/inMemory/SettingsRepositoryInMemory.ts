@@ -6,7 +6,10 @@ import { ISettingsRepository } from "../ISettingsRepository";
 export class SettingsRepositoryInMemory implements ISettingsRepository {
   private repository: Setting[] = [];
 
-  async create({ chat, username }: ICreateSettingsDTO): Promise<Setting> {
+  async create({
+    chat = true,
+    username,
+  }: ICreateSettingsDTO): Promise<Setting> {
     const newSetting = new Setting();
 
     Object.assign(newSetting, {

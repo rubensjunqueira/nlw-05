@@ -14,6 +14,7 @@ export class CreateSettings1625947137894 implements MigrationInterface {
           {
             name: "username",
             type: "varchar",
+            isUnique: true,
           },
           {
             name: "chat",
