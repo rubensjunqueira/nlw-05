@@ -4,7 +4,7 @@
     "module": "commonjs",
     "strict": false,
     "baseUrl": "./",
-    "allowJs": true,
+    "allowJs": false,
     "paths": {
       "@database/*": [
         "./src/database/*"
@@ -17,7 +17,7 @@
       ],
       "@DTOs/*": [
         "./src/DTOs/*"
-      ],      
+      ]      
     },
     "typeRoots": [
       "./node_modules/@types",
