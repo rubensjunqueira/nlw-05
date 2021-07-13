@@ -11,6 +11,10 @@ export class SettingsRepository implements ISettingsRepository {
     this.repository = getRepository(Setting);
   }
 
+  async findByUsername(username: string): Promise<Setting> {
+    return this.repository.findOne({ username });
+  }
+
   async create({ chat, username }: ICreateSettingsDTO): Promise<Setting> {
     const newSetting = this.repository.create({ chat, username });
 
