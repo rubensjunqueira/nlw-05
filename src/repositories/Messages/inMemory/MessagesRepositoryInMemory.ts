@@ -24,4 +24,8 @@ export class MessagesRepositoryInMemory implements IMessagesRepository {
 
     return newMessage;
   }
+
+  async listByUser(user_id: string): Promise<Message[]> {
+    return this.repository.filter((x) => x.user_id === user_id);
+  }
 }

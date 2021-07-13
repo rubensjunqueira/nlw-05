@@ -26,4 +26,8 @@ export class MessagesRepository implements IMessagesRepository {
 
     return newMessage;
   }
+
+  async listByUser(user_id: string): Promise<Message[]> {
+    return this.repository.find({ where: { user_id }, relations: ["users"] });
+  }
 }

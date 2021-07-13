@@ -16,7 +16,7 @@ export class Message {
   readonly id: string;
 
   @Column()
-  admin_id: string;
+  admin_id?: string;
 
   @Column()
   user_id: string;
