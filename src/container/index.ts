@@ -1,3 +1,5 @@
+import { IMessagesRepository } from "@repositories/Messages/IMessagesRepository";
+import { MessagesRepository } from "@repositories/Messages/typeorm/MessagesRepository";
 import { ISettingsRepository } from "@repositories/Settings/ISettingsRepository";
 import { SettingsRepository } from "@repositories/Settings/typeorm/SettingsRepository";
 import { IUsersRepository } from "@repositories/Users/IUsersRepository";
@@ -12,4 +14,9 @@ container.registerSingleton<ISettingsRepository>(
 container.registerSingleton<IUsersRepository>(
   "UsersRepository",
   UsersRepository
+);
+
+container.registerSingleton<IMessagesRepository>(
+  "MessagesRepository",
+  MessagesRepository
 );
