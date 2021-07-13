@@ -20,6 +20,12 @@
       ],
       "@DTOs/*": [
         "./src/DTOs/*"
+      ]    ,  
+      "@controllers/*": [
+        "./src/controllers/*"
+      ]    ,  
+      "@services/*": [
+        "./src/services/*"
       ]      
     },
     "typeRoots": [
