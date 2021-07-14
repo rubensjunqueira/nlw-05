@@ -1,4 +1,5 @@
 import { ICreateSettingsDTO } from "@DTOs/Settings/ICreateSettingsDTO";
+import { IUpdateSettingsDTO } from "@DTOs/Settings/IUpdateSettingsDTO";
 import { Setting } from "@entities/Setting";
 import { getRepository, Repository } from "typeorm";
 
@@ -9,6 +10,10 @@ export class SettingsRepository implements ISettingsRepository {
 
   constructor() {
     this.repository = getRepository(Setting);
+  }
+
+  async update({ chat, username, id }: IUpdateSettingsDTO): Promise<void> {
+    await this.repository.update(id, { chat });
   }
 
   async findByUsername(username: string): Promise<Setting> {
