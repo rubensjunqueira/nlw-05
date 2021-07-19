@@ -6,6 +6,14 @@ import { IConnectionsRepository } from "../IConnectionsRepository";
 export class ConnectionsRepositoryInMemory implements IConnectionsRepository {
   private repository: Connection[] = [];
 
+  async findBySocket(socket_id: string): Promise<Connection> {
+    return this.repository.find((x) => x.socket_id === socket_id);
+  }
+
+  async findWithoutAdmin(): Promise<Connection[]> {
+    return this.repository.filter((x) => x.admin_id === null);
+  }
+
   async update(data: Partial<Connection>): Promise<void> {
     const index = this.repository.findIndex((x) => x.id === data.id);
 

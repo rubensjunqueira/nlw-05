@@ -11,6 +11,17 @@ export class ConnectionsRepository implements IConnectionsRepository {
     this.repository = getRepository(Connection);
   }
 
+  async findBySocket(socket_id: string): Promise<Connection> {
+    return this.repository.findOne({ socket_id });
+  }
+
+  async findWithoutAdmin(): Promise<Connection[]> {
+    return this.repository.find({
+      where: { admin_id: null },
+      relations: ["user"],
+    });
+  }
+
   async update(data: Partial<Connection>): Promise<void> {
     await this.repository.update(data.id, data);
   }
