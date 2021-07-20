@@ -38,14 +38,14 @@ document.querySelector("#start_chat").addEventListener("click", (event) => {
     messages.forEach((message) => {
       if (message.admin_id === null) {
         const rendered = Mustache.render(template_client, {
-          message: message.text,
+          message: message.message,
           email,
         });
 
         document.getElementById("messages").innerHTML += rendered;
       } else {
         const rendered = Mustache.render(template_admin, {
-          message_admin: message.text,
+          message_admin: message.message,
         });
 
         document.getElementById("messages").innerHTML += rendered;
@@ -59,7 +59,7 @@ document.querySelector("#start_chat").addEventListener("click", (event) => {
     const template_admin = document.getElementById("admin-template").innerHTML;
 
     const rendered = Mustache.render(template_admin, {
-      message_admin: message.text,
+      message_admin: message.message,
     });
 
     document.getElementById("messages").innerHTML += rendered;
@@ -69,10 +69,10 @@ document.querySelector("#start_chat").addEventListener("click", (event) => {
 document
   .querySelector("#send_message_button")
   .addEventListener("click", (event) => {
-    const text = document.getElementById("message_user");
+    const message = document.getElementById("message_user");
 
     const params = {
-      text: text.value,
+      message: message.value,
       socket_admin_id,
     };
 
@@ -82,7 +82,7 @@ document
       .innerHTML;
 
     const rendered = Mustache.render(template_client, {
-      message: text.value,
+      message: message.value,
       email: emailUser,
     });
 
