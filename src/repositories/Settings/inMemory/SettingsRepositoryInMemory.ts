@@ -34,7 +34,6 @@ export class SettingsRepositoryInMemory implements ISettingsRepository {
 
     Object.assign(this.repository[index], {
       chat,
-      username,
       updated_at: new Date(),
     });
   }
