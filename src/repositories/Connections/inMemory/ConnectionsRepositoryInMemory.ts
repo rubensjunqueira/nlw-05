@@ -33,10 +33,10 @@ export class ConnectionsRepositoryInMemory implements IConnectionsRepository {
     const newConnection = new Connection();
 
     Object.assign(newConnection, {
-      id,
       user_id,
       admin_id,
       socket_id,
+      created_at: new Date(),
     });
 
     this.repository.push(newConnection);
